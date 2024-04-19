@@ -23,6 +23,15 @@ const people = [
     { name: 'Headphones', price: 80, category: 'Electronics' },
     { name: 'Shoes', price: 60, category: 'Clothing' },
    ];
+   const getCategory=products.reduce((group,product)=>{
+    const {category}=product;
+    group[category]=group[category]??[]
+    group[category].push(product)
+    return group
+   },{})
+   console.log(getCategory)
+
+
    
   
   // Given an array of objects, where each object represents a student with a name and an array of scores, write a function that returns a new array containing the names of all students whose average score is greater than or equal to 85.
@@ -54,14 +63,8 @@ const people = [
   
    //Given an object representing a car, with properties for the make, model, year, and a method to display the car's information,
     //write a function that takes the car object and adds a new method to the object called age.
-    // The age method should return the current age of the car based on the current year and the car's year property. const car = {
-  //     make: 'Ford',
-  //     model: 'Ranger',
-  //     year: 2023,
-  //     displayInfo: function() {
-  //       console.log(`Make: ${this.make}, Model: ${this.model}, Year: ${this.year}`);
-  //     },
-  //   };
+    // The age method should return the current age of the car based on the current year and the car's year property. 
+  
   const car = {
     make: 'Ford',
     model: 'Ranger',
